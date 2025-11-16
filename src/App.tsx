@@ -5,10 +5,25 @@ import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import AuthGuard from "@/components/auth/AuthGuard";
 import { Home } from "@/pages";
 import { Pin, Setup, ForgotPasscode } from "./pages/auth";
-import { CreditCards, IdNumbers, Dashboard, Password, AddPassword, EditPassword, Profile, PrivateNotes, AddNote, EditNote, ViewNote, SecretUrls, AddUrl, EditUrl } from "./pages/main";
+import {
+  CreditCards,
+  IdNumbers,
+  Dashboard,
+  Password,
+  AddPassword,
+  EditPassword,
+  Profile,
+  PrivateNotes,
+  AddNote,
+  EditNote,
+  ViewNote,
+  SecretUrls,
+  AddUrl,
+  EditUrl,
+} from "./pages/main";
 import NotFound from "./pages/not-found";
 import { AnimatePresence } from "framer-motion";
-import PageTransition from "@/components/ui/page-transition";
+import PageTransition from "./components/ui/page-transition";
 
 export default function App() {
   const location = useLocation();
@@ -54,151 +69,116 @@ export default function App() {
           <Route
             path="/app"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/credentials"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <Password />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <Password />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/credentials/add"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <AddPassword />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <AddPassword />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/credentials/edit/:id"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <EditPassword />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <EditPassword />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/id-numbers"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <IdNumbers />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <IdNumbers />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/credit-cards"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <CreditCards />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <CreditCards />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/profile"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <Profile />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/notes"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <PrivateNotes />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <PrivateNotes />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/notes/add"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <AddNote />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <AddNote />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/notes/edit/:id"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <EditNote />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <EditNote />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/notes/view/:id"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <ViewNote />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <ViewNote />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/secret-urls"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <SecretUrls />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <SecretUrls />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/secret-urls/add"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <AddUrl />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <AddUrl />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/app/secret-urls/edit/:id"
             element={
-              <PageTransition>
-                <ProtectedRoute>
-                  <EditUrl />
-                </ProtectedRoute>
-              </PageTransition>
+              <ProtectedRoute>
+                <EditUrl />
+              </ProtectedRoute>
             }
           />
-          <Route
-            path="*"
-            element={
-              <PageTransition>
-                <NotFound />
-              </PageTransition>
-            }
-          />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </AnimatePresence>
     </>
